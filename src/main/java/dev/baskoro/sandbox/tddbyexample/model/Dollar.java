@@ -2,7 +2,7 @@ package dev.baskoro.sandbox.tddbyexample.model;
 
 public class Dollar {
 
-  public int amount;
+  private int amount;
 
   public Dollar(int amount) {
     this.amount = amount;
@@ -10,5 +10,11 @@ public class Dollar {
 
   public Dollar times(int multiplier) {
     return new Dollar(amount * multiplier);
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    Dollar dollar = (Dollar) o;
+    return this.amount == dollar.amount;
   }
 }
